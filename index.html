@@ -14,9 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 
+
     <!--Google Material Icon-->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    
+    <!--Fontawesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+
     <link rel="stylesheet" href="./assets/css/style.css">
+
+
+
 </head>
 
 <body>
@@ -121,6 +129,20 @@
                     <a href="#" class=""><i class="material-icons">library_books</i>Calender </a>
                 </li>
 
+                <li class="dropdown">
+                    <a href="#homeSubmenu8" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="material-icons">aspect_ratio</i>Multi Level
+                    </a>
+                    <ul class="collapse list-unstyled menu" id="homeSubmenu8">
+                        <li class="dropdown">
+                            <a href="#homeSubmenu9" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lelvel 2</a>
+                                <ul class="collapse list-unstyled menu" id="homeSubmenu9">
+                                    <li><a href="#">Page 1</a></li>
+                                </ul>
+                        </li>                     
+                    </ul>
+                </li>
+
             </ul>
         </div><!-- Sidebar End  -->
 
@@ -132,7 +154,7 @@
                     <div class="row">
                         <div class="col-2 col-md-1 col-lg-1 order-2 order-md-1 align-self-center">
                             <div class="menubar">
-                                <span class="material-icons text-white">signal_cellular_alt</span>
+                                <span class="material-icons text-white">toggle_on</span>
                             </div>
                         </div>
 
@@ -565,11 +587,17 @@
             $(".menubar").on('click', function () {
                 $("#sidebar").toggleClass('active');
                 $("#content").toggleClass('active');
+                $(this).toggleClass('close')
+                $(this).hasClass('close') ? $(this).find('span').html('toggle_off') : $(this).find('span').html('toggle_on');
             });
 
             $('.menubar').on('click', function () {
                 $("#sidebar").toggleClass('show-nav');
             });
+
+            $(".dropdown-toggle").on('click', function(){
+                $(this).toggleClass('show');
+            })
 
         });
     </script>

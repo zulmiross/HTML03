@@ -1,7 +1,7 @@
 /* Estilos  */
 
-
 @import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;600;700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,600;6..12,700&family=Roboto:wght@100;300;400;700&display=swap');
+
 
 :root {
     --color-white: #fff;
@@ -205,6 +205,7 @@ a:focus {
 }
 
 #sidebar ul li {
+    margin-left: 35px;
     padding: 2px 0px;
 }
 
@@ -225,12 +226,18 @@ a:focus {
     background-color: #DBE5FD;
 }
 
-
-.dropdown-toggle::after {
+.dropdown-toggle::after {   
+    /* content: "\f107" !important;    */
     position: absolute;
     right: 22px;
-    top: 18px;
+    top: 21px;
     color: #777777;
+    transform: rotate(-90deg);
+    transition: .2s;
+}
+
+.dropdown-toggle.show::after {     
+    transform: rotate(0);
 }
 
 #sidebar ul li.dropdown {
@@ -374,7 +381,7 @@ input[type="search"] {
 .menubar span {
     margin: 9px;
     padding: 0px;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
 }
 
 .navbar-nav>li.active {
