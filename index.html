@@ -136,7 +136,7 @@
                     <ul class="collapse list-unstyled menu" id="homeSubmenu8">
                         <li class="dropdown">
                             <a href="#homeSubmenu9" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lelvel 2</a>
-                                <ul class="collapse list-unstyled menu" id="homeSubmenu9">
+                                <ul class="collapse list-unstyled submenu" id="homeSubmenu9">
                                     <li><a href="#">Page 1</a></li>
                                 </ul>
                         </li>                     
@@ -589,14 +589,18 @@
                 $("#content").toggleClass('active');
                 $(this).toggleClass('close')
                 $(this).hasClass('close') ? $(this).find('span').html('toggle_off') : $(this).find('span').html('toggle_on');
+                
             });
 
             $('.menubar').on('click', function () {
-                $("#sidebar").toggleClass('show-nav');
+                $("#sidebar").toggleClass('show-nav');               
+                
             });
 
-            $(".dropdown-toggle").on('click', function(){
-                $(this).toggleClass('show');
+            $(".dropdown-toggle").on('click', function(){               
+                $(this).toggleClass('show');                
+
+                // $(this).toggleClass('show').find('ul').toggleClass('show');                
             })
 
         });
